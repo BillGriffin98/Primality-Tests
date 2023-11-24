@@ -50,9 +50,10 @@ For a given odd $n$:
 3. Generate the Lucas sequences defined as follows:
 
 
-$$U_{n}(P,Q) = PU_{n-1}(P,Q) - Q_{n-2}(P,Q)\\
+$$U_{n}(P,Q) = PU_{n-1}(P,Q) - Q_{n-2}(P,Q)$$
 
-V_{n}(P,Q) = PV_{n-1}(P,Q) - V_{n-2}(P,Q)$$
+$$V_{n}(P,Q) = PV_{n-1}(P,Q) - V_{n-2}(P,Q)$$
+
 with starting values $U_0 = 0, U_1 = 1, V_0 = 2, V_1 = P$.
 
 4. Check the congruence relation $U_{n+1} \equiv 0 \pmod{n}$. If this fails, then $n$ is certainly composite.
