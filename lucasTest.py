@@ -1,9 +1,9 @@
-def gcd(a, b):
+def gcd(a, b): #Defines the greatest commmon divisor of two numbers a, b.
     while b != 0:
         a, b = b, a % b
     return a
 
-def jacobi(a, p):
+def jacobi(a, p): #Defines the Jacobi symbol for two numbers a, p.
     if a == 0:
         return 0
     elif a == 1:
@@ -14,25 +14,32 @@ def jacobi(a, p):
         return jacobi(p % a, a) * ((-1) ** ((a - 1) * (p - 1) // 4))
 
 def isLucasPrime(n):
-    dAbs, sign, d = 5, 1, 5
-    while 1:
-        if 1 < gcd(d, n) < n:
+
+    #Find the value D for our Lucas sequence
+
+    dAbs, sign, d = 5, 1, 5 #Initilising variables 
+
+    while 1: #Tests if our current D gives the correct gcd and jacobi. If not, then we move to the next D in the sequence {5, -7, 9, -11, 13,...}
+        if 1 < gcd(d, n) < n: 
             return False
         if jacobi(d, n) == -1:
             break
         dAbs, sign = dAbs + 2, sign * -1
         d = dAbs * sign
     
-    p, q = 1, (1 - d) // 4
-    u, v, u2, v2, q, q2 = 0, 2, 1, p, q, 2 * q
-    bits = []
-    t = (n + 1) // 2
     
+    #Computing our Lucas sequence
+
+    p, q = 1, (1 - d) // 4 #Initialising variables
+    u, v, u2, v2, q, q2 = 0, 2, 1, p, q, 2 * q
+
+    bits = [] #Generating a binary representation of (n+1)/2 
+    t = (n + 1) // 2
     while t > 0:
         bits.append(t % 2)
         t = t // 2
     
-    h = 0
+    h = 0 #Generate U_(n+1) in accordance with the binary representation
     while h < len(bits):
         u2 = (u2 * v2) % n
         v2 = (v2 * v2 - q2) % n

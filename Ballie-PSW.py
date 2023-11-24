@@ -1,5 +1,6 @@
 import random
 
+#Defines the Miller-Rabin primality test
 def millerRabin(n):
     temp = float(n) - 1
     e = 0
@@ -26,11 +27,14 @@ def millerRabin(n):
                 return True
     print(listOfWitnesses) #Returns our Miller-Rabin sequence that varifies the number is indeed composite
     return False
+
+#Defines the greatest common divisor
 def gcd(a, b):
     while b != 0:
         a, b = b, a % b
     return a
 
+#Defines the Jacobi symbol
 def jacobi(a, p):
     if a == 0:
         return 0
@@ -41,6 +45,7 @@ def jacobi(a, p):
     else:
         return jacobi(p % a, a) * ((-1) ** ((a - 1) * (p - 1) // 4))
 
+#Defines the Lucas primality test
 def isLucasPrime(n):
     dAbs, sign, d = 5, 1, 5
     while 1:
@@ -80,13 +85,14 @@ def isLucasPrime(n):
     return u == 0
 
 
+#Performs the Ballie-PSW 
 def balliePsw(n):
-    if isLucasPrime(n) == False:
+    if isLucasPrime(n) == False: #Performs the Lucas test
         return False
-    if millerRabin(n) == False:
+    if millerRabin(n) == False: #Performs the Miller-Rabin test
         return False
     else:
-        return True
+        return True #If n passes both, then it is almost certainly prime
 
 
 subject = int(input("n = "))
