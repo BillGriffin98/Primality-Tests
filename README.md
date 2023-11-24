@@ -6,23 +6,17 @@ This is a collection of a few primality tests I created as a part of my final ye
 
 2. For an integer $a$ and a prime number $p$ such that $(a, p) = 1$, the *Lagrange symbol*, denoted as $\left(\frac{a}{p}\right)$, is defined as follows:
 
-$$
-\left(\frac{a}{p}\right) = 
+$$\left(\frac{a}{p}\right) = 
 \begin{cases}
     0 & \text{if } a \equiv 0 \pmod{p} \\
     1 & \text{if } a \text{ is a quadratic residue modulo } p \\
     -1 & \text{if } a \text{ is a quadratic non-residue modulo } p
-\end{cases}
-$$
+\end{cases}$$
 
 
 3. For an integer $a$ and an odd positive integer $n$, the *Jacobi symbol*, denoted as $\left(\frac{a}{n}\right)$, can be expressed in terms of the Legendre symbol as follows:
-$$
-
-\left(\frac{a}{n}\right) =
-\prod_{i} \left(\frac{a}{p_i}\right)^{e_i},
-
-$$
+$$\left(\frac{a}{n}\right) =
+\prod_{i} \left(\frac{a}{p_i}\right)^{e_i}$$
 where the product is taken over the prime factors $p_i$ of $n$, and $e_i$ is the exponent of the prime factor $p_i$ in the prime factorization of $n$.
 
 ## Trial Division
@@ -44,21 +38,19 @@ For a given odd $n$:
 
 2. Generate a Miller-Rabin sequence $\{a^k, a^{2k},...,a^{2^ek} \} \pmod{n}$
 
-3. If the resulting sequence doesn't takes the form $$\{ 1,...\}\text{ and }\{...,-1,...\} $$ then $n$ is composite.
+3. If the resulting sequence doesn't takes the form $$\{ 1,...\}\text{ and }\{...,-1,...\}$$ then $n$ is composite.
 
 
 ## Lucas Sequence Test
 For a given odd $n$:
-1. Find a parameter $D$ such as $ (\frac{D}{n}) = -1$ from the sequence $\{5, -7, 9, -11,...\}$.
+1. Find a parameter $D$ such as $(\frac{D}{n}) = -1$ from the sequence $\{5, -7, 9, -11,...\}$.
 
 2. Set $P = 1$ and $Q = (1 - D)/4$, and check $(P,n) = (Q,n) = 1$ 
 
 3. Generate the Lucas sequences defined as follows:
 
-$$
-U_{n}(P,Q) = PU_{n-1}(P,Q) - Q_{n-2}(P,Q)\\
-V_{n}(P,Q) = PV_{n-1}(P,Q) - V_{n-2}(P,Q)
-$$
+$$U_{n}(P,Q) = PU_{n-1}(P,Q) - Q_{n-2}(P,Q)\\
+V_{n}(P,Q) = PV_{n-1}(P,Q) - V_{n-2}(P,Q)$$
 with starting values $U_0 = 0, U_1 = 1, V_0 = 2, V_1 = P$.
 
 4. Check the congruence relation $U_{n+1} \equiv 0 \pmod{n}$. If this fails, then $n$ is certainly composite.
@@ -69,8 +61,7 @@ For a given $n$ and number of trials $t$:
 
 2. Test if the following relation holds
 
-$$
-\left(\frac{a}{n}\right) \equiv a^{\frac{n-1}{2}} \pmod{n}$$
+$$\left(\frac{a}{n}\right) \equiv a^{\frac{n-1}{2}} \pmod{n}$$
 
 3. If not, then $n$ is certainly composite
 
@@ -88,9 +79,7 @@ It has been shown through exhasutive search that there exists no composite $n<25
 For a given $n$
 1. Generate $S_p$ from the following sequence 
 
-$$
-S_p = S_{p-1}^2 - 2
-$$ 
+$$S_p = S_{p-1}^2 - 2$$ 
 where $S_1 = 4$
 
 2. Test if $S_p \equiv 0\pmod{2^p - 1}$
