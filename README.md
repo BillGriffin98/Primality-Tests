@@ -36,7 +36,7 @@ For a given $n$:
 For a given odd $n$:
 1. Express $n$ in the form $n-1 = 2^{e}k$, where $e$ is an integer, $k$ is odd, and $a$ is a random such that $1 < a < n$.
 
-2. Generate a Miller-Rabin sequence {$a^k, a^{2k},...,a^{2^ek}$} $\pmod{n}$
+2. Generate a Miller-Rabin sequence { $a^k, a^{2k},...,a^{2^ek}$ } $\pmod{n}$
 
 3. If the resulting sequence doesn't takes the form { 1,...} and {...,-1,...} then $n$ is composite.
 
@@ -49,7 +49,7 @@ For a given odd $n$:
 
 3. Generate the Lucas sequences defined as follows:
 
-'''math
+
 $$U_{n}(P,Q) = PU_{n-1}(P,Q) - Q_{n-2}(P,Q)\\
 
 V_{n}(P,Q) = PV_{n-1}(P,Q) - V_{n-2}(P,Q)$$
