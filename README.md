@@ -27,7 +27,7 @@ For a given $n$:
 	
 ## Fermat's Test
 For a given $n$:
-1. Pick a random base $1 < a < n$ and test if $(a,n) = 1$. If it fails, chose another random value for $a$.
+1. Pick a random base $1 < a < n$ and test if $(a,n) = 1$. If it fails, choose another random value for $a$.
 2. Test if Fermat's Little Theorem holds: $$a^{n-1} \equiv 1 \pmod{n}$$
 3. If not, then $n$ is composite.
 
@@ -38,7 +38,7 @@ For a given odd $n$:
 
 2. Generate a Miller-Rabin sequence { $a^k, a^{2k},...,a^{2^ek}$ } $\pmod{n}$
 
-3. If the resulting sequence doesn't takes the form { 1,...} and {...,-1,...} then $n$ is composite.
+3. If the resulting sequence doesn't take the form { 1,...} and {...,-1,...} then $n$ is composite.
 
 
 ## Lucas Sequence Test
@@ -56,7 +56,7 @@ $$V_{n}(P,Q) = PV_{n-1}(P,Q) - V_{n-2}(P,Q)$$
 
 with starting values $U_0 = 0, U_1 = 1, V_0 = 2, V_1 = P$.
 
-4. Check the congruence relation $U_{n+1} \equiv 0 \pmod{n}$. If this fails, then $n$ is certainly composite.
+4. Check whether $U_{n+1} \equiv 0 \pmod{n}$ holds. If this fails, then $n$ is certainly composite.
 
 ## Euler-Jacobi Test
 For a given $n$ and number of trials $t$:
@@ -68,7 +68,7 @@ $$\left(\frac{a}{n}\right) \equiv a^{\frac{n-1}{2}} \pmod{n}$$
 
 3. If not, then $n$ is certainly composite
 
-## Ballie-PSW Test
+## Baillie-PSW Test
 For a given $n$
 1. Perform the Miller-Rabin test with 2 as the base. If $n$ fails, then it is composite 
 
@@ -76,7 +76,7 @@ For a given $n$
 
 3. If $n$ passes, it is most certainly prime.
 
-It has been shown through exhasutive search that there exists no composite $n<25 \times 10^{9}$ that pass this test. 
+It has been shown through exhaustive search that there exists no composite $n<25 \times 10^{9}$ that pass this test. 
 
 ## Lucas-Lehmer Test
 For a given $n$
